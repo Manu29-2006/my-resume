@@ -178,7 +178,6 @@ footer {
 }
 
 @media(max-width:600px) {
-
     header {
         flex-direction: column;
         gap: 10px;
@@ -199,22 +198,100 @@ footer {
     }
 }
 
+/* PRINT SETTINGS */
+
 @media print {
 
-    header, footer, button {
+    * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+
+    html, body {
+        margin: 0 !important;
+        padding: 0 !important;
+        background: #f2f5fc !important;
+    }
+
+    header {
+        display: flex !important;
+        background: linear-gradient(90deg,#172554,#4265c5) !important;
+        color: white !important;
+    }
+
+    nav {
         display: none !important;
     }
 
     .page {
-        display: none !important;
+        display: block !important;
+        width: 90% !important;
+        max-width: 850px !important;
+        margin: 15px auto !important;
+        padding: 25px !important;
+        box-shadow: none !important;
+        break-inside: auto;
     }
 
-    #resume {
+    #home {
         display: block !important;
-        width: 100%;
-        max-width: none;
-        margin: 0;
-        padding: 10px;
-        box-shadow: none;
+        background: linear-gradient(120deg,#172554,#4265c5) !important;
+        color: white !important;
+        text-align: center;
+    }
+
+    #home h1,
+    #home h2 {
+        color: white !important;
+    }
+
+    .skills {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+    }
+
+    .skill-card {
+        background: white !important;
+        color: #26334d !important;
+        box-shadow: 0 3px 12px #ccc !important;
+        break-inside: avoid;
+    }
+
+    .skill-card h4 {
+        color: #172554 !important;
+    }
+
+    .skill-card p {
+        color: #777 !important;
+    }
+
+    .skill-logo {
+        background: black !important;
+        color: white !important;
+    }
+
+    .btn {
+        display: inline-block !important;
+        background: #71dfd0 !important;
+        color: #172554 !important;
+    }
+
+    footer {
+        display: block !important;
+        background: #172554 !important;
+        color: white !important;
+    }
+
+    button {
+        display: inline-block !important;
+    }
+
+    input, textarea {
+        border: 1px solid #ccc !important;
+    }
+
+    a {
+        text-decoration: none !important;
     }
 }
